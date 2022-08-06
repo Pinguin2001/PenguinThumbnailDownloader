@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thumbnail Downloader</title>
+    <meta name="author" content="Pinguin2001">
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <p id="openmenubtn" onclick="openNav()">
+    &#9776;
+  </p>
+
+  <!-- Navigation bar -->
+  <div class="Nav">
+    <a class="closebtn" onclick="closeNav()">&times;</a>
+    <a onclick="openPage('Home')">Home</a>
+    <a onclick="openPage('About')">About</a>
+  </div>
+
+  <!-- Home page-->
+  <div id="Home" class="page">
+    <h2>Home</h2>
+    <p>Enter a valid Youtube video url (supported: youtube.com/watch, youtu.be, youtube.com/embed)</p>
+    <div class="inputContainer">
+      <input id="VideoURLInput"/>
+      <img onclick="ShowResOptions();" src="icons/done.png" class="submitBtn" />
+    </div>
+    <div class="DownloadOptionsContainer" style="display: none;">
+      <p>Select a thumbnail quality:</p>
+      <input id="RadioBtn" type="radio" name="quality" value="/default.jpg" />Low (120x90)
+      <br>
+      <input id="RadioBtn" type="radio" name="quality" value="/mqdefault.jpg" />Medium (320x180)
+      <br>
+      <input id="RadioBtn" type="radio" name="quality" value="/hqdefault.jpg" />High (480x360)
+      <br>
+      <input id="RadioBtn" type="radio" name="quality" value="/maxresdefault.jpg" />Max (1280x720)
+      <br>
+      <button onclick="LoadThumbnail();">Load thumbnail</button>
+    </div>
+    <div class="ThumbnailContainer" style="display: none;">
+      <p>Right click or long press on the image and select "Save image as"</p>
+      <img class="Thumbnail">
+    </div>
+  </div>
+  
+  <!-- About page-->
+  <div id="About" class="page">
+    <h2>About</h2>
+    <h3>Version information</h3>
+    <div class="container">
+      <img src="icons/app.png" height="75" widht="75" />
+      <p>PenguinThumbnailDownloader v1.0 <br> by Pinguin2001</p>
+    </div>
+    <h3>Credits</h3>
+    <a href="https://www.flaticon.com/free-icons/video" title="video icons">App icon created by gariebaldy - Flaticon</a>
+  </div>
+
+  <!-- JavaScripts -->
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="app.js"></script>
+</body>
