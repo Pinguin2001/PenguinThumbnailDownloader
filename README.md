@@ -1,9 +1,7 @@
-<center>
 <img src="icons/app.png" height="75" width="75" />
 <h1>PenguinThumbnailDownloader</h1>
 <p>Download thumbnails from youtube with ease</p>
 <img src="screenshots/mobile.png" />
-</center>
 
 # Features
 - Open-source
