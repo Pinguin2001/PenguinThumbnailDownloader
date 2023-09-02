@@ -1,92 +1,83 @@
-/* Global variables */
+// Global variables
 var videoid = {};
 
-/* On document loaded */
-$(document).ready(function() {
-  /* Responive Nav */
+// On document loaded
+document.addEventListener("DOMContentLoaded", function () {
+  // Responsive Nav
   opencloseNav();
-  /* Load home */
+  // Load home
   openPage("Home");
 });
 
-$(window).resize(function() {
+window.addEventListener("resize", function () {
   opencloseNav();
 });
 
-/* When user entered a video link and hit the enter key, show thumbnail resolution options */
-$("#VideoURLInput")[0].addEventListener("keyup", function (event) {
+// When user entered a video link and hit the enter key, show thumbnail resolution options
+document.getElementById("VideoURLInput").addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     ShowResOptions();
   }
 });
 
-/* Navigation bar */
+// Navigation bar
 function opencloseNav() {
-  /* if windows width > 700 show navigation bar on the left side
-  else hide it behind the hamburger menu button */
-  if ($(window).width() > 700) {
+  // if window width > 700 show navigation bar on the left side
+  // else hide it behind the hamburger menu button
+  if (window.innerWidth > 700) {
     openNav();
-  }
-  else {
+  } else {
     closeNav();
   }
 }
 
 function openNav() {
-  $('.Nav').width("200px");
+  document.querySelector(".Nav").style.width = "200px";
 }
 
 function closeNav() {
-  $('.Nav').width("0px");
+  document.querySelector(".Nav").style.width = "0px";
 }
-
 
 function openPage(pageName) {
-  var page = $(".page");
-  for (i = 0; i < page.length; i++) {
-    $(page[i]).hide();
+  var page = document.querySelectorAll(".page");
+  for (var i = 0; i < page.length; i++) {
+    page[i].style.display = "none";
   }
-  if ($(window).width() < 700) {
+  if (window.innerWidth < 700) {
     closeNav();
   }
-  $("#" + pageName).show();
+  document.getElementById(pageName).style.display = "block";
 }
 
-/* Home */
+// Home
 function ShowResOptions() {
-  $(".DownloadOptionsContainer").show();
-  $(".ThumbnailContainer").hide();
+  document.querySelector(".DownloadOptionsContainer").style.display = "block";
+  document.querySelector(".ThumbnailContainer").style.display = "none";
 }
 
 function GetVideoID() {
-  var VideoURLInputValue = $("#VideoURLInput").val();
-  if (VideoURLInputValue.includes("watch"))
-  {
+  var VideoURLInputValue = document.getElementById("VideoURLInput").value;
+  if (VideoURLInputValue.includes("watch")) {
     videoid = VideoURLInputValue.substr(32);
-  }
-  else if (VideoURLInputValue.includes("embed"))
-  {
+  } else if (VideoURLInputValue.includes("embed")) {
     videoid = VideoURLInputValue.substr(30);
-  }
-  else if (VideoURLInputValue.includes("youtu.be"))
-  {
+  } else if (VideoURLInputValue.includes("youtu.be")) {
     videoid = VideoURLInputValue.substr(17);
-  }
-  else {
+  } else {
     alert("The link you entered cannot be processed");
   }
 }
 
 function LoadThumbnail() {
-  var SelectedRes = $('input:radio[name="quality"]:checked').val();
-  if (!SelectedRes)
-  {
+  var SelectedRes = document.querySelector('input[name="quality"]:checked');
+  if (!SelectedRes) {
     alert("Please verify you selected a quality option");
-  }
-  else {
+  } else {
     GetVideoID();
-    $(".ThumbnailContainer .Thumbnail").attr("src", "https://img.youtube.com/vi/" + videoid + SelectedRes);
-    $(".ThumbnailContainer").show();
+    document.querySelector(".ThumbnailContainer .Thumbnail").src =
+      "https://img.youtube.com/vi/" + videoid + SelectedRes.value;
+    document.querySelector(".ThumbnailContainer").style.display = "block";
   }
 }
