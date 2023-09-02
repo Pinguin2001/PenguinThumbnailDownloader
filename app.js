@@ -3,14 +3,8 @@ var videoid = {};
 
 // On document loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Responsive Nav
-  opencloseNav();
   // Load home
   openPage("Home");
-});
-
-window.addEventListener("resize", function () {
-  opencloseNav();
 });
 
 // When user entered a video link and hit the enter key, show thumbnail resolution options
@@ -22,16 +16,6 @@ document.getElementById("VideoURLInput").addEventListener("keyup", function (eve
 });
 
 // Navigation bar
-function opencloseNav() {
-  // if window width > 700 show navigation bar on the left side
-  // else hide it behind the hamburger menu button
-  if (window.innerWidth > 700) {
-    openNav();
-  } else {
-    closeNav();
-  }
-}
-
 function openNav() {
   document.querySelector(".Nav").style.width = "200px";
 }

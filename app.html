@@ -7,6 +7,7 @@
     <meta name="author" content="Pinguin2001">
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="custom-fluent-web.css">
 </head>
 <body>
   <p id="openmenubtn" onclick="openNav()">
@@ -38,7 +39,7 @@
       <br>
       <input id="RadioBtn" type="radio" name="quality" value="/maxresdefault.jpg" />Max (1280x720)
       <br>
-      <button onclick="LoadThumbnail();">Load thumbnail</button>
+      <button class="fluent-Button" onclick="LoadThumbnail();">Load thumbnail</button>
     </div>
     <div class="ThumbnailContainer" style="display: none;">
       <p>Right click or long press on the image and select "Save image as"</p>
@@ -50,10 +51,10 @@
   <div id="About" class="page">
     <h2>About</h2>
     <h3>Version information</h3>
-    <div class="container">
+    <div class="SVSettingsBlockElement">
       <img src="icons/app.png" height="75" widht="75" />
-      <p>PenguinThumbnailDownloader v1.0 <br> by Pinguin2001</p>
-    </div>
+      <p>PenguinThumbnailDownloader v2.0 <br> by @pinguin2001</p>
+  </div>
     <h3>Credits</h3>
     <a href="https://www.flaticon.com/free-icons/video" title="video icons">App icon created by gariebaldy - Flaticon</a>
   </div>

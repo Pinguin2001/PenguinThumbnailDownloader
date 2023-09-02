@@ -1,13 +1,17 @@
-body, a {
-  background-color: #252526;
-  color: white;
-  font-family: Arial;
+@media (prefers-color-scheme: light) {
+  .Nav {
+    background-color: #f3f3f3;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Nav {
+    background-color: #202020;
+  }
 }
 
 .Nav {
-  background-color: #252526;
-  color: white;
-  width: 0;
+  width: 0px;
   height: 100%;
   position: fixed;
   z-index: 1;
@@ -25,10 +29,6 @@ body, a {
   color: #818181;
   display: block;
   transition: 0.3s;
-}
-
-.Nav a:hover {
-  color: #f1f1f1;
 }
 
 .Nav .closebtn {
@@ -52,11 +52,19 @@ body, a {
 }
 
 @media screen and (min-width: 700px) {
-  #openmenubtn { display: none;}
+  #openmenubtn {
+    display: none;
+  }
+
   .page {
     margin-left: 200px;
   }
-  .Nav { border-right: 1px solid #6d6d6e; }
+
+  .Nav {
+    border-right: 1px solid #6d6d6e;
+    width: 200px;
+  }
+
   .Nav .closebtn {
     display: none;
   }
@@ -91,18 +99,6 @@ body, a {
   display: none;
 }
 
-button {
-  background-color:#51b0be;
-  border-radius:5px;
-  color:#ffffff;
-  padding:10px 10px;
-  border: none;
-}
-
-button:hover, .submitBtn:hover {
-  background-color: rgb(37, 221, 224);
-}
-
 .container {
   border: 1px solid #868686;
   display: flex;
@@ -111,6 +107,10 @@ button:hover, .submitBtn:hover {
 }
 
 /* Pointers */
-.Nav a, .Nav .closebtn, #openmenubtn, .inputContainer img, button {
+.Nav a,
+.Nav .closebtn,
+#openmenubtn,
+.inputContainer img,
+button {
   cursor: pointer;
 }

@@ -1,0 +1,90 @@
+body {
+    background-color: #f3f3f3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.SVSettingsBlockElement {
+    background-color: #fbfbfb;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #f3f3f3;
+        color: black;
+    }
+
+    a:link {
+        font-style: normal;
+        color: #245874;
+    }
+    
+    a:visited {
+        color: #245874;
+    }
+    
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #202020;
+        color: white;
+    }
+
+    .SVSettingsBlockElement {
+        background-color: #2d2d2d;
+    }
+
+    a:link {
+        font-style: normal;
+        color: #9cdcfe;
+    }
+    
+    a:visited {
+        color: #9cdcfe;
+    }
+}
+
+.SVSettingsBlockElement {
+    border: 1px solid #868686;
+    padding: 8px;
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: border-color 200ms ease-out;
+    cursor: default;
+}
+
+.SVSettingsBlockElement:hover {
+    border-color: #62cdfe;
+}
+
+.SVSettingsBlockElement img {
+    margin-right: 5px;
+}
+
+.fluent-Button {
+    background-color: #62cdfe;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: default;
+    color: black;
+    font-size: 13px;
+    padding: 7px;
+    text-decoration: none;
+    border:none;
+}
+
+.fluent-Button:link {
+    color: black;
+}
+
+.fluent-Button:hover {
+    background-color: #47b1e8;
+}
+
+.fluent-Button:active {
+    background-color: #42a1d2;
+    color: #245874;
+}
